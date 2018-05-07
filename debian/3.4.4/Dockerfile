@@ -17,5 +17,8 @@ RUN apt-get update \
 		r-base-dev \
 	&& mkdir /root/project
 
-# docker image build .\debian\ --tag stevensotelo/r_debian:3.4.4
-# docker container run -it --name r_base stevensotelo/r_debian:3.4.4
+# Add volume	
+VOLUME [ "/root/project" ]
+
+# docker image build .\debian\3.4.4 --tag stevensotelo/r_docker:debian_3.4.4
+# docker container run -it --name r_base stevensotelo/r_docker:debian_3.4.4
